@@ -1,0 +1,40 @@
+{
+  "name": "@sahilphondekar/react-component-library",
+  "version": "0.1.3",
+  "description": "A customizable React component library built with Vite and CSS",
+  "main": "dist/react-component-library.umd.js",
+  "module": "dist/react-component-library.es.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sahil-phondekar/react-component-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sahil-phondekar/react-component-library/issues"
+  },
+  "homepage": "https://github.com/sahil-phondekar/react-component-library#readme",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.2.6",
+    "prettier": "^3.5.3"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "library",
+    "ui"
+  ],
+  "author": "Sahil Phondekar",
+  "license": "MIT"
+}
