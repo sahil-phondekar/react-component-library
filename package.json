@@ -22,12 +22,17 @@
   "homepage": "https://github.com/sahil-phondekar/react-component-library#readme",
   "peerDependencies": {
     "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react-dom": ">=16.8.0",
+    "react-hook-form": ">=7.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "tailwindcss": "^3.4.17",
     "vite": "^6.2.6",
-    "prettier": "^3.5.3"
+    "vite-plugin-css-injected-by-js": "^3.5.2"
   },
   "keywords": [
     "react",
@@ -36,5 +41,11 @@
     "ui"
   ],
   "author": "Sahil Phondekar",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@hookform/resolvers": "^5.0.1",
+    "clsx": "^2.1.1",
+    "prop-types": "^15.8.1",
+    "react-datepicker": "^8.3.0"
+  }
 }
