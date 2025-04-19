@@ -1,6 +1,6 @@
 {
   "name": "@sahilphondekar/react-component-library",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A customizable React component library built with Vite and CSS",
   "main": "dist/react-component-library.umd.js",
   "module": "dist/react-component-library.es.js",
