@@ -4,16 +4,23 @@ import clsx from "clsx";
 
 const DashboardLayout = ({
   children,
+  containerClassName = "",
+  sidebarClassName = "",
+  sidebarHeader = "Menu",
+  sidebarHeaderCollapsed = "M",
+  sidebarHeaderClassName = "",
+  sidebarCollapsedIcon = <span className="block w-6 h-6">&gt;</span>,
+  sidebarOpenIcon = <span className="block w-6 h-6">&lt;</span>,
   sidebarContent,
-  sidebarTitle = "Menu",
+  sidebarContentClassName = "",
+  isSidebarCollapsed = false,
+  setIsSidebarCollapsed = () => {},
+  mainContentClassName = "",
   collapsible = true,
   sidebarWidth = "w-64",
   collapsedSidebarWidth = "w-20",
-  className = "",
-  containerClassName = "",
   mobileBreakpoint = 768,
 }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -32,7 +39,7 @@ const DashboardLayout = ({
 
   const toggleSidebar = () => {
     if (collapsible && !isMobile) {
-      setIsCollapsed(!isCollapsed);
+      setIsSidebarCollapsed(!isSidebarCollapsed);
     }
   };
 
@@ -54,11 +61,7 @@ const DashboardLayout = ({
           )}
           aria-label="Toggle sidebar"
         >
-          {isSidebarOpen ? (
-            <span className="block w-5 h-5">✕</span>
-          ) : (
-            <span className="block w-5 h-5">☰</span>
-          )}
+          {isSidebarOpen ? <>{sidebarOpenIcon}</> : <>{sidebarCollapsedIcon}</>}
         </button>
       )}
 
@@ -73,35 +76,51 @@ const DashboardLayout = ({
                 isSidebarOpen ? "translate-x-0" : "-translate-x-full",
                 sidebarWidth,
               )
-            : isCollapsed
+            : isSidebarCollapsed
               ? collapsedSidebarWidth
               : sidebarWidth,
+          sidebarClassName,
         )}
       >
         {/* Sidebar Header */}
-        <div className="p-4 border-b border-gray-200 flex items-center justify-between">
-          {(!isCollapsed || isMobile) && (
-            <h2 className="text-xl font-semibold text-gray-800">
-              {sidebarTitle}
-            </h2>
+        <div
+          className={clsx(
+            "p-4 flex items-center justify-between",
+            sidebarHeaderClassName,
+          )}
+        >
+          {isSidebarCollapsed ? (
+            <>{sidebarHeaderCollapsed}</>
+          ) : (
+            <>{sidebarHeader}</>
           )}
           {collapsible && !isMobile && (
             <button
               onClick={toggleSidebar}
-              className="p-1 rounded-md hover:bg-gray-200 focus:outline-none"
-              aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+              className={clsx(
+                "fixed z-30 p-2 rounded-full shadow-lg",
+                "focus:outline-none transition-transform duration-300",
+                "top-4",
+                isSidebarCollapsed ? "left-16" : "left-4",
+                !isSidebarCollapsed ? "transform translate-x-56" : "",
+              )}
+              aria-label="Toggle sidebar"
             >
-              {isCollapsed ? (
-                <span className="block w-6 h-6">→</span>
+              {!isSidebarCollapsed ? (
+                <>{sidebarOpenIcon}</>
               ) : (
-                <span className="block w-6 h-6">←</span>
+                <>{sidebarCollapsedIcon}</>
               )}
             </button>
           )}
         </div>
 
         {/* Sidebar Content */}
-        <div className="flex-1 overflow-y-auto">{sidebarContent}</div>
+        <div
+          className={clsx("flex-1 overflow-y-auto", sidebarContentClassName)}
+        >
+          {sidebarContent}
+        </div>
       </aside>
 
       {/* Mobile Overlay */}
@@ -117,9 +136,10 @@ const DashboardLayout = ({
         className={clsx(
           "flex-1 overflow-y-auto transition-all duration-300",
           isMobile && isSidebarOpen ? "ml-0" : "",
+          mainContentClassName,
         )}
       >
-        <div className="p-6">{children}</div>
+        {children}
       </main>
     </div>
   );
@@ -127,24 +147,22 @@ const DashboardLayout = ({
 
 DashboardLayout.propTypes = {
   children: PropTypes.node.isRequired,
+  containerClassName: PropTypes.string,
+  sidebarClassName: PropTypes.string,
+  sidebarHeader: PropTypes.node,
+  sidebarHeaderCollapsed: PropTypes.node,
+  sidebarHeaderClassName: PropTypes.string,
+  sidebarCollapsedIcon: PropTypes.node,
+  sidebarOpenIcon: PropTypes.node,
   sidebarContent: PropTypes.node.isRequired,
-  sidebarTitle: PropTypes.string,
+  sidebarContentClassName: PropTypes.string,
+  isSidebarCollapsed: PropTypes.bool,
+  setIsSidebarCollapsed: PropTypes.func,
+  mainContentClassName: PropTypes.string,
   collapsible: PropTypes.bool,
   sidebarWidth: PropTypes.string,
   collapsedSidebarWidth: PropTypes.string,
-  className: PropTypes.string,
-  containerClassName: PropTypes.string,
   mobileBreakpoint: PropTypes.number,
-};
-
-DashboardLayout.defaultProps = {
-  sidebarTitle: "Menu",
-  collapsible: true,
-  sidebarWidth: "w-64",
-  collapsedSidebarWidth: "w-20",
-  className: "",
-  containerClassName: "",
-  mobileBreakpoint: 768,
 };
 
 export default DashboardLayout;

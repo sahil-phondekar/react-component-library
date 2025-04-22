@@ -2,21 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-const PlainLayout = ({ children, className, ...rest }) => {
+const PlainLayout = ({ children, containerClassName = "", ...rest }) => {
   return (
-    <main className={clsx("min-h-screen", className)} {...rest}>
+    <main className={clsx("min-h-screen", containerClassName)} {...rest}>
       {children}
     </main>
   );
 };
 
 PlainLayout.propTypes = {
-  className: PropTypes.string,
   children: PropTypes.node.isRequired,
-};
-
-PlainLayout.defaultProps = {
-  className: "",
+  containerClassName: PropTypes.string,
 };
 
 export default PlainLayout;
