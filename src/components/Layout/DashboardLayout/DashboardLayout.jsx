@@ -20,6 +20,7 @@ const DashboardLayout = ({
   sidebarWidth = "w-64",
   collapsedSidebarWidth = "w-20",
   mobileBreakpoint = 768,
+  ...rest
 }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -48,7 +49,10 @@ const DashboardLayout = ({
   };
 
   return (
-    <div className={clsx("flex h-screen relative", containerClassName)}>
+    <div
+      className={clsx("flex h-screen relative", containerClassName)}
+      {...rest}
+    >
       {/* Mobile Sidebar Toggle Button */}
       {isMobile && (
         <button
