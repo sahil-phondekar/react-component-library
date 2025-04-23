@@ -3,20 +3,6 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { SvgIcon } from "../../Icons";
 
-/**
- * A toast notification component with auto-dismiss and multiple types
- *
- * @param {Object} props - Component props
- * @param {string|React.ReactNode} props.message - Toast message content
- * @param {"info"|"success"|"error"|"warning"} [props.type="info"] - Toast type
- * @param {boolean} props.isOpen - Whether toast is visible
- * @param {Function} props.onClose - Close handler function
- * @param {number} [props.duration=3000] - Auto-dismiss duration in ms (0 for no auto-dismiss)
- * @param {string|React.ElementType} [props.icon] - Custom SVG path or icon component
- * @param {string} [props.position="bottom-right"] - Toast position
- * @param {string} [props.className] - Additional className(s)
- * @returns {JSX.Element} Toast component
- */
 const Toast = ({
   message,
   type = "info",
@@ -40,19 +26,19 @@ const Toast = ({
   const typeConfig = {
     success: {
       bg: "bg-green-500",
-      icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>`,
     },
     error: {
       bg: "bg-red-500",
-      icon: "M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m14.5 9.5-5 5"/><path d="m9.5 9.5 5 5"/></svg>`,
     },
     warning: {
       bg: "bg-yellow-500",
-      icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>`,
     },
     info: {
       bg: "bg-blue-500",
-      icon: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>`,
     },
   };
 
@@ -126,13 +112,6 @@ Toast.propTypes = {
     "bottom-right",
   ]),
   className: PropTypes.string,
-};
-
-Toast.defaultProps = {
-  type: "info",
-  duration: 3000,
-  position: "bottom-right",
-  className: "",
 };
 
 export default Toast;

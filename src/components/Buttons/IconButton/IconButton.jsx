@@ -18,19 +18,6 @@ const sizeClasses = {
   },
 };
 
-/**
- * A transparent icon-only button component
- *
- * @param {Object} props - Component props
- * @param {string|React.ElementType} props.icon - SVG path data or icon component
- * @param {string} [props.className] - Additional CSS classes
- * @param {"small"|"medium"|"large"} [props.size="medium"] - Button size
- * @param {string} [props.color="currentColor"] - Icon color
- * @param {boolean} [props.disabled=false] - Disabled state
- * @param {function} [props.onClick] - Click handler
- * @param {string} props.ariaLabel - Accessibility label (required)
- * @returns {JSX.Element} IconButton component
- */
 const IconButton = ({
   icon,
   className = "",
@@ -84,14 +71,7 @@ IconButton.propTypes = {
   color: PropTypes.string,
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
-  ariaLabel: PropTypes.string.isRequired, // Required for accessibility
-};
-
-IconButton.defaultProps = {
-  className: "",
-  size: "medium",
-  color: "currentColor",
-  disabled: false,
+  ariaLabel: PropTypes.string.isRequired,
 };
 
 export default IconButton;

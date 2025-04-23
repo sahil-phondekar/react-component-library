@@ -63,12 +63,4 @@ Heading.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-Heading.defaultProps = {
-  as: "h1",
-  size: "2xl",
-  weight: "bold",
-  color: "text-gray-900",
-  className: "",
-};
-
 export default Heading;

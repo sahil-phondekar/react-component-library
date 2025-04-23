@@ -45,22 +45,6 @@ const sizeStyles = {
   },
 };
 
-/**
- * A highly customizable button component with integrated SVG icon support
- *
- * @param {Object} props - Component props
- * @param {"primary"|"secondary"|"transparent"|"danger"|string} [props.variant="primary"] - Button style variant
- * @param {"small"|"medium"|"large"} [props.size="medium"] - Button size
- * @param {string|React.ElementType} [props.icon] - SVG path data, full SVG code, or React icon component
- * @param {string} [props.label] - Button text
- * @param {string} [props.className] - Additional className(s)
- * @param {boolean} [props.disabled] - Disabled state
- * @param {boolean} [props.fullWidth] - Whether button should take full width
- * @param {Object} [props.customColors] - Custom color overrides
- * @param {React.ReactNode} [props.children] - Button content
- * @param {Function} [props.onClick] - Click handler
- * @returns {JSX.Element} Button component
- */
 const Button = ({
   variant = "primary",
   size = "medium",
@@ -164,15 +148,6 @@ Button.propTypes = {
   }),
   children: PropTypes.node,
   onClick: PropTypes.func,
-};
-
-Button.defaultProps = {
-  variant: "primary",
-  size: "medium",
-  className: "",
-  disabled: false,
-  fullWidth: false,
-  customColors: {},
 };
 
 export default Button;

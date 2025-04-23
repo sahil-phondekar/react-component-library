@@ -2,15 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-/**
- * A reusable loading spinner component with customizable size and color
- *
- * @param {Object} props - Component props
- * @param {string} [props.size="w-8 h-8"] - Tailwind classes for width and height (e.g., "w-6 h-6")
- * @param {string} [props.color="border-blue-500"] - Tailwind class for border color (e.g., "border-red-500")
- * @param {string} [props.className] - Additional classes to merge
- * @returns {JSX.Element} Animated spinning loader
- */
 const Spinner = ({
   size = "w-8 h-8",
   color = "border-blue-500",
@@ -34,18 +25,9 @@ const Spinner = ({
 };
 
 Spinner.propTypes = {
-  /** Tailwind classes for width and height (e.g., "w-6 h-6") */
   size: PropTypes.string,
-  /** Tailwind class for border color (e.g., "border-red-500") */
   color: PropTypes.string,
-  /** Additional classes to merge */
   className: PropTypes.string,
-};
-
-Spinner.defaultProps = {
-  size: "w-8 h-8",
-  color: "border-blue-500",
-  className: "",
 };
 
 export default Spinner;

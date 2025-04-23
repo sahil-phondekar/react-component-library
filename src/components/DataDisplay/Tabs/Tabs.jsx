@@ -2,21 +2,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-/**
- * A customizable tabs component with horizontal and vertical layouts
- *
- * @param {Object} props - Component props
- * @param {Array} props.tabs - Array of tab objects {label, content}
- * @param {number} [props.defaultIndex=0] - Default active tab index
- * @param {"horizontal"|"vertical"} [props.direction="horizontal"] - Tab direction
- * @param {string} [props.className] - Additional className(s) for container
- * @param {string} [props.tabClassName] - Additional className(s) for tab buttons
- * @param {string} [props.activeTabClassName] - Additional className(s) for active tab
- * @param {string} [props.contentClassName] - Additional className(s) for content area
- * @param {boolean} [props.fullWidth] - Whether tabs should take full width
- * @param {string} [props.activeColor="blue"] - Color for active tab indicator
- * @returns {JSX.Element} Tabs component
- */
 const Tabs = ({
   tabs,
   defaultIndex = 0,
@@ -26,30 +11,9 @@ const Tabs = ({
   activeTabClassName = "",
   contentClassName = "",
   fullWidth = false,
-  activeColor = "blue",
 }) => {
   const [activeIndex, setActiveIndex] = useState(defaultIndex);
   const isVertical = direction === "vertical";
-
-  // Color variants for active tab
-  const colorVariants = {
-    blue: {
-      bg: "bg-blue-500",
-      text: "text-blue-500",
-      border: "border-blue-500",
-    },
-    green: {
-      bg: "bg-green-500",
-      text: "text-green-500",
-      border: "border-green-500",
-    },
-    purple: {
-      bg: "bg-purple-500",
-      text: "text-purple-500",
-      border: "border-purple-500",
-    },
-    // Add more colors as needed
-  };
 
   return (
     <div
@@ -70,15 +34,11 @@ const Tabs = ({
             key={tab.label}
             onClick={() => setActiveIndex(index)}
             className={clsx(
-              "px-4 py-2 rounded-lg text-sm font-medium focus:outline-none",
+              "px-4 py-2 text-sm font-medium focus:outline-none",
               "transition-colors duration-200",
               "relative",
               activeIndex === index
-                ? clsx(
-                    colorVariants[activeColor].text,
-                    "font-semibold",
-                    activeTabClassName,
-                  )
+                ? clsx("font-semibold", activeTabClassName)
                 : clsx("text-gray-600 hover:text-gray-900", tabClassName),
               fullWidth && "flex-1 text-center",
             )}
@@ -97,7 +57,6 @@ const Tabs = ({
                   isVertical
                     ? "left-0 top-1/2 -translate-y-1/2 w-1 h-6"
                     : "bottom-0 left-1/2 -translate-x-1/2 w-6 h-1",
-                  colorVariants[activeColor].bg,
                 )}
               />
             )}
@@ -106,9 +65,7 @@ const Tabs = ({
       </div>
 
       {/* Tab Content */}
-      <div
-        className={clsx("flex-1", isVertical ? "ml-4" : "", contentClassName)}
-      >
+      <div className={clsx("flex-1", isVertical ? "ml-4" : "")}>
         {tabs.map((tab, index) => (
           <div
             key={tab.label}
@@ -116,8 +73,9 @@ const Tabs = ({
             role="tabpanel"
             aria-labelledby={`tab-${index}`}
             className={clsx(
-              "p-4 bg-white rounded-lg shadow",
+              "p-4 shadow",
               activeIndex !== index && "hidden",
+              contentClassName,
             )}
           >
             {tab.content}
@@ -142,18 +100,6 @@ Tabs.propTypes = {
   activeTabClassName: PropTypes.string,
   contentClassName: PropTypes.string,
   fullWidth: PropTypes.bool,
-  activeColor: PropTypes.oneOf(["blue", "green", "purple"]),
-};
-
-Tabs.defaultProps = {
-  defaultIndex: 0,
-  direction: "horizontal",
-  className: "",
-  tabClassName: "",
-  activeTabClassName: "",
-  contentClassName: "",
-  fullWidth: false,
-  activeColor: "blue",
 };
 
 export default Tabs;

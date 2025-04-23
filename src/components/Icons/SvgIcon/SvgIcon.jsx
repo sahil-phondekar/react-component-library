@@ -2,17 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-/**
- * SVG Icon Component
- *
- * @param {Object} props - Component props
- * @param {string} props.svg - SVG path data or full SVG code
- * @param {string} [props.className] - Additional CSS classes
- * @param {string} [props.size="24px"] - Width and height of the icon
- * @param {string} [props.color="currentColor"] - Icon color
- * @param {string} [props.viewBox="0 0 24 24"] - SVG viewBox
- * @returns {JSX.Element} SVG Icon
- */
 const SvgIcon = ({
   svg,
   className = "",
@@ -21,7 +10,6 @@ const SvgIcon = ({
   viewBox = "0 0 24 24",
   ...props
 }) => {
-  // Check if the input is just path data or full SVG code
   const isPathOnly = !svg.startsWith("<svg");
 
   return isPathOnly ? (

@@ -3,22 +3,6 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { SvgIcon } from "../../Icons";
 
-/**
- * AccordionItem component with SVG icon support
- *
- * @param {Object} props - Component props
- * @param {string} props.title - Accordion item title
- * @param {React.ReactNode|string} props.content - Accordion content
- * @param {boolean} props.isOpen - Whether item is open
- * @param {Function} props.onToggle - Toggle handler
- * @param {string} [props.className] - Additional className(s)
- * @param {string} [props.titleClassName] - Additional className(s) for title button
- * @param {string} [props.contentClassName] - Additional className(s) for content
- * @param {string|React.ElementType} [props.iconOpen] - SVG path or component for open state
- * @param {string|React.ElementType} [props.iconClosed] - SVG path or component for closed state
- * @param {string} [props.iconSize="16px"] - Size for SVG icons
- * @returns {JSX.Element} AccordionItem component
- */
 const AccordionItem = ({
   title,
   content,
@@ -27,8 +11,8 @@ const AccordionItem = ({
   className = "",
   titleClassName = "",
   contentClassName = "",
-  iconOpen = "M19 9l-7 7-7-7",
-  iconClosed = "M9 5l7 7-7 7",
+  iconOpen = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>`,
+  iconClosed = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>`,
   iconSize = "16px",
 }) => {
   const contentRef = useRef(null);
@@ -41,12 +25,12 @@ const AccordionItem = ({
   }, [isOpen]);
 
   return (
-    <div className={clsx("border-b border-gray-200", className)}>
+    <div className={clsx("border border-gray-200 shadow-sm", className)}>
       <button
         className={clsx(
           "w-full text-left px-4 py-3 font-medium",
           "flex justify-between items-center",
-          "hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500",
+          "focus:outline-none",
           titleClassName,
         )}
         onClick={onToggle}
@@ -89,22 +73,6 @@ const AccordionItem = ({
   );
 };
 
-/**
- * Accordion component with SVG icon support
- *
- * @param {Object} props - Component props
- * @param {Array} props.items - Array of accordion items
- * @param {boolean} [props.allowMultiple=false] - Allow multiple items open
- * @param {boolean} [props.defaultOpenFirst=false] - Open first item by default
- * @param {string} [props.className] - Additional className(s)
- * @param {string} [props.itemClassName] - Additional className(s) for all items
- * @param {string} [props.titleClassName] - Additional className(s) for all titles
- * @param {string} [props.contentClassName] - Additional className(s) for all contents
- * @param {string|React.ElementType} [props.iconOpen] - SVG path or component for open state
- * @param {string|React.ElementType} [props.iconClosed] - SVG path or component for closed state
- * @param {string} [props.iconSize="16px"] - Size for SVG icons
- * @returns {JSX.Element} Accordion component
- */
 const Accordion = ({
   items = [],
   allowMultiple = false,
@@ -171,16 +139,6 @@ Accordion.propTypes = {
   iconOpen: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
   iconClosed: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
   iconSize: PropTypes.string,
-};
-
-Accordion.defaultProps = {
-  allowMultiple: false,
-  defaultOpenFirst: false,
-  className: "",
-  itemClassName: "",
-  titleClassName: "",
-  contentClassName: "",
-  iconSize: "16px",
 };
 
 export default Accordion;

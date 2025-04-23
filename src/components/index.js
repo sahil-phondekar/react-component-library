@@ -11,7 +11,7 @@ export {
   FileUploadField,
   DateField,
 } from "./Forms";
-export { Table, Accordion, Tooltip, Tabs, DataTable } from "./DataDisplay";
+export { Table, Accordion, Tooltip, Tabs } from "./DataDisplay";
 export { Modal } from "./Overlays";
 export { Spinner, Skeleton, EmptyState, Alert, Toast } from "./Feedback";
 export { SvgIcon } from "./Icons";

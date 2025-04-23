@@ -2,20 +2,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-/**
- * A customizable tooltip component with multiple positioning options
- *
- * @param {Object} props - Component props
- * @param {React.ReactNode} props.children - Tooltip trigger element
- * @param {string|React.ReactNode} props.text - Tooltip content
- * @param {"top"|"bottom"|"left"|"right"} [props.position="top"] - Tooltip position
- * @param {string} [props.className] - Additional className(s) for the trigger wrapper
- * @param {string} [props.tooltipClass] - Additional className(s) for the tooltip
- * @param {number} [props.delay=200] - Show/hide delay in milliseconds
- * @param {boolean} [props.disabled=false] - Whether the tooltip is disabled
- * @param {string} [props.arrowSize="5px"] - Size of the tooltip arrow
- * @returns {JSX.Element} Tooltip component
- */
 const Tooltip = ({
   children,
   text,
@@ -134,15 +120,6 @@ Tooltip.propTypes = {
   delay: PropTypes.number,
   disabled: PropTypes.bool,
   arrowSize: PropTypes.string,
-};
-
-Tooltip.defaultProps = {
-  position: "top",
-  className: "",
-  tooltipClass: "",
-  delay: 200,
-  disabled: false,
-  arrowSize: "5px",
 };
 
 export default Tooltip;

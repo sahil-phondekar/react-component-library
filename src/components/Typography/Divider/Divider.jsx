@@ -2,17 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-/**
- * A flexible divider component with multiple orientation and style options
- *
- * @param {Object} props - Component props
- * @param {"horizontal"|"vertical"} [props.orientation="horizontal"] - Divider direction
- * @param {string} [props.color="border-gray-200"] - Border color class
- * @param {string} [props.className] - Additional className(s)
- * @param {string} [props.thickness="border"] - Border thickness (border, border-2, etc.)
- * @param {React.ReactNode} [props.children] - Optional centered content
- * @returns {JSX.Element} Divider component
- */
 const Divider = ({
   orientation = "horizontal",
   color = "border-gray-200",
@@ -74,13 +63,6 @@ Divider.propTypes = {
   className: PropTypes.string,
   thickness: PropTypes.string,
   children: PropTypes.node,
-};
-
-Divider.defaultProps = {
-  orientation: "horizontal",
-  color: "border-gray-200",
-  className: "",
-  thickness: "border",
 };
 
 export default Divider;
