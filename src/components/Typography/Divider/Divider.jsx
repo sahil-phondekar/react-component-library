@@ -8,7 +8,7 @@ const Divider = ({
   className = "",
   thickness = "border",
   children,
-  ...props
+  ...rest
 }) => {
   const isHorizontal = orientation === "horizontal";
 
@@ -19,7 +19,7 @@ const Divider = ({
         isHorizontal ? "w-full" : "h-full w-px",
         className,
       )}
-      {...props}
+      {...rest}
     >
       {children ? (
         <>

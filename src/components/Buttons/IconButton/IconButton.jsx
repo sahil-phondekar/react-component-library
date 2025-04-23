@@ -26,7 +26,7 @@ const IconButton = ({
   disabled = false,
   onClick,
   ariaLabel,
-  ...props
+  ...rest
 }) => {
   const sizeConfig = sizeClasses[size] || sizeClasses.medium;
 
@@ -47,7 +47,7 @@ const IconButton = ({
       disabled={disabled}
       aria-label={ariaLabel}
       aria-disabled={disabled}
-      {...props}
+      {...rest}
     >
       {typeof icon === "string" ? (
         <SvgIcon svg={icon} size={sizeConfig.icon} color={color} />

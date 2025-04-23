@@ -37,7 +37,7 @@ const Heading = ({
   color = "text-gray-900",
   className = "",
   children,
-  ...props
+  ...rest
 }) => {
   return (
     <Component
@@ -47,7 +47,7 @@ const Heading = ({
         color,
         className,
       )}
-      {...props}
+      {...rest}
     >
       {children}
     </Component>

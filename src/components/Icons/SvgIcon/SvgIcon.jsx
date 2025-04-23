@@ -8,7 +8,7 @@ const SvgIcon = ({
   size = "24px",
   color = "currentColor",
   viewBox = "0 0 24 24",
-  ...props
+  ...rest
 }) => {
   const isPathOnly = !svg.startsWith("<svg");
 
@@ -20,7 +20,7 @@ const SvgIcon = ({
       viewBox={viewBox}
       fill={color}
       xmlns="http://www.w3.org/2000/svg"
-      {...props}
+      {...rest}
     >
       <path d={svg} />
     </svg>
@@ -29,7 +29,7 @@ const SvgIcon = ({
       className={clsx("inline-flex", className)}
       style={{ width: size, height: size, color }}
       dangerouslySetInnerHTML={{ __html: svg }}
-      {...props}
+      {...rest}
     />
   );
 };

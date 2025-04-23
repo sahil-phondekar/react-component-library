@@ -56,7 +56,7 @@ const Button = ({
   customColors = {},
   children,
   onClick,
-  ...props
+  ...rest
 }) => {
   const variantStyle =
     typeof variant === "string" && !defaultVariantStyles[variant]
@@ -96,7 +96,7 @@ const Button = ({
       onClick={disabled ? undefined : onClick}
       disabled={disabled}
       aria-disabled={disabled}
-      {...props}
+      {...rest}
     >
       {icon && (
         <>

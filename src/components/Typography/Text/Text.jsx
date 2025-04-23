@@ -38,7 +38,7 @@ const Text = ({
   className = "",
   truncate = false,
   children,
-  ...props
+  ...rest
 }) => {
   return (
     <Component
@@ -51,7 +51,7 @@ const Text = ({
         },
         className,
       )}
-      {...props}
+      {...rest}
     >
       {children}
     </Component>
