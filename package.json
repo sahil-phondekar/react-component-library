@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/sahil-phondekar/react-component-library/issues"
   },
-  "homepage": "https://github.com/sahil-phondekar/react-component-library#readme",
+  "homepage": "https://sahil-phondekar.github.io/react-component-library-docs",
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
