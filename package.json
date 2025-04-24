@@ -1,7 +1,7 @@
 {
   "name": "@sahilphondekar/react-component-library",
-  "version": "0.1.4",
-  "description": "A customizable React component library built with Vite and CSS",
+  "version": "1.0.0",
+  "description": "A customizable and reusable React component library built with Tailwind CSS for building modern, responsive web applications.",
   "main": "dist/react-component-library.umd.js",
   "module": "dist/react-component-library.es.js",
   "files": [

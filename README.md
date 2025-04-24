@@ -1,123 +1,49 @@
 # @sahilphondekar/react-component-library
 
-A lightweight React component library built with **Vite**, **React**, and **pure CSS** — no Tailwind, no UI frameworks.
+Welcome to the **React Component Library**! This library provides a set of reusable and customizable components for building modern React applications. It aims to offer a consistent and flexible user interface for your web applications, with fully customizable components that can easily integrate with Tailwind CSS and can be customized to meet your specific project needs.
 
-## 📦 Installation
+Whether you're building a dashboard, admin panel, or any other type of application, this library offers a collection of components like buttons, cards, modals, forms, icons, and more to streamline your development process.
+
+## 🚀 Key Features
+
+- **Reusable Components**: Easy-to-use components for common UI elements such as buttons, modals, cards, etc.
+- **Tailwind CSS Integration**: Pre-configured to work seamlessly with Tailwind CSS for styling.
+- **Customizable**: Extensive props and configuration options allow you to modify components according to your project requirements.
+- **Mobile-First**: Components are responsive and work well across different screen sizes.
+- **Accessible**: Focused on building accessible components for improved user experience.
+
+## Installation
+
+To get started with the library in your project, you can easily install it from npm.
+
+### Step 1: Install the Library
+
+Run the following command to install the component library into your React project:
 
 ```bash
 npm install @sahilphondekar/react-component-library
 ```
 
-## 🚀 Usage
+If you're using Yarn, you can install it using:
 
-1. **Import global CSS** (in `main.jsx` or `App.jsx`):
-
-```js
-import "@sahilphondekar/react-component-library/dist/react-component-library.css";
+```bash
+yarn add @sahilphondekar/react-component-library
 ```
 
-2. **Use components**:
+### Step 2: Import and Use Components
 
-```js
+Once the package is installed, you can start using the components in your project. Here’s an example of how to import and use the `Button` component:
+
+```jsx
 import { Button } from "@sahilphondekar/react-component-library";
 
-function App() {
-  return <Button onClick={() => alert("Clicked!")}>Click Me</Button>;
-}
+const MyComponent = () => (
+  <Button color="blue" size="lg">
+    Click Me
+  </Button>
+);
 ```
 
+### Step 3: Styling with Tailwind CSS (Optional)
 
----
-
-Here’s the complete list of components for your React + CSS Module library, organized hierarchically by category and subcategory for admin/dashboard projects:
-
----
-
-### **1. Typography**
-- `Text` (paragraphs, spans, small text)
-- `Heading` (h1-h6 with consistent sizes)
-- `Label` (form field labels)
-- `Code` (inline code snippets)
-- `Blockquote`
-
-### **2. Layout**
-- `Box` (spacing wrapper)
-- `Container` (max-width constrained)
-- `Grid` (responsive grid system)
-- `Stack` (vertical/horizontal spacing)
-- `Divider` (horizontal/vertical rules)
-- `Flex` (flexbox utility)
-
-### **3. Buttons & Actions**
-- `Button` (primary, secondary, ghost)
-- `IconButton` (button with icon only)
-- `ButtonGroup` (joined buttons)
-- `FAB` (Floating Action Button)
-- `DropdownButton` (with menu)
-
-### **4. Forms**
-- `Input` (text, email, password)
-- `Textarea`
-- `Select` (native dropdown)
-- `Checkbox`
-- `Radio`
-- `Toggle` (switch)
-- `Slider` (range input)
-- `FileUpload`
-- `DatePicker`
-- `FormGroup` (wrapper for labels/errors)
-- `ValidationError` (form error message)
-
-### **5. Data Display**
-- `Badge` (status indicators)
-- `Tag` / `Chip` (filter/status tags)
-- `Avatar` (user thumbnails)
-- `Table` (with sorting/pagination)
-- `DataGrid` (advanced table)
-- `Card` (with header/footer)
-- `Accordion` (collapsible content)
-- `Tooltip` (hover info)
-- `Progress` (linear/circular)
-
-### **6. Navigation**
-- `Breadcrumbs`
-- `Tabs` (horizontal/vertical)
-- `Pagination`
-- `Sidebar` / `NavMenu`
-- `Stepper` (multi-step forms)
-
-### **7. Overlays & Modals**
-- `Modal` (dialog popup)
-- `Drawer` (side panel)
-- `Toast` (notification)
-- `Alert` (inline messages)
-- `Popover` (contextual floating panel)
-- `Tooltip`
-
-### **8. Feedback & Status**
-- `Spinner` (loading indicator)
-- `Skeleton` (loading placeholder)
-- `Alert` (success/error/warning)
-- `EmptyState` (no-data placeholder)
-
-### **9. Dashboard-Specific**
-- `StatCard` (metric KPIs)
-- `Chart` (wrapper for charts)
-- `FilterBar` (complex filters)
-- `KanbanBoard`
-- `Timeline`
-
-### **10. Utilities**
-- `ClickOutsideWrapper`
-- `Portal` (render outside DOM hierarchy)
-- `Responsive` (show/hide based on breakpoints)
-- `ThemeProvider` (theme context)
-
----
-
-### **Notes**:
-- **Atomic Design**: Starts small (`Text`, `Button`) → compounds (`FormGroup`, `Card`).
-- **Configurable**: Each component supports variants (size, color, state).
-- **Theme-Ready**: Uses CSS variables for theming.
-
-Need adjustments or want to prioritize a specific category?
+If you haven’t already set up Tailwind CSS in your project, you can follow the [official Tailwind CSS installation guide](https://tailwindcss.com/docs/installation) to configure it. The component library works seamlessly with Tailwind, so you can benefit from the utility-first styling out of the box.
