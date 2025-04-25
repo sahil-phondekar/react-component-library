@@ -1,6 +1,6 @@
 export { Text, Heading, Divider } from "./Typography";
 export { Box, Card, PlainLayout, DashboardLayout } from "./Layout";
-export { Button, IconButton } from "./Buttons";
+export { Button, IconButton, ActionListButton } from "./Buttons";
 export {
   InputField,
   TextareaField,
