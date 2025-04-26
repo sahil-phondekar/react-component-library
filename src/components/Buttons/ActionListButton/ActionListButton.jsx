@@ -9,6 +9,7 @@ const ActionButtonList = ({
   menuIcon,
   menuIconClassName = "",
   menuClassName = "",
+  containerClassName = "",
   actionClassName = "",
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,7 +54,10 @@ const ActionButtonList = ({
         icon={menuIcon}
         onClick={toggleMenu}
       />
-      <div className="relative rounded-md" ref={menuRef}>
+      <div
+        className={clsx("relative rounded-md", containerClassName)}
+        ref={menuRef}
+      >
         {isOpen && (
           <div
             className={clsx(
@@ -98,6 +102,7 @@ ActionButtonList.propTypes = {
   menuIcon: PropTypes.node.isRequired,
   menuIconClassName: PropTypes.string,
   menuClassName: PropTypes.string,
+  containerClassName: PropTypes.string,
   actionClassName: PropTypes.string,
 };
 
