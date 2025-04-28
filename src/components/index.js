@@ -10,6 +10,8 @@ export {
   FileUploadField,
   DateField,
   CheckboxGroupField,
+  TypeAheadSelectField,
+  AsyncTypeAheadSelectField,
 } from "./FormFields";
 export { Table, Accordion, Tooltip, Tabs, KeyValueData } from "./DataDisplay";
 export { Modal } from "./Overlays";

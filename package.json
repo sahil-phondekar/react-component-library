@@ -1,6 +1,6 @@
 {
   "name": "@sahilphondekar/react-component-library",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A customizable and reusable React component library built with Tailwind CSS for building modern, responsive web applications.",
   "main": "dist/react-component-library.umd.js",
   "module": "dist/react-component-library.es.js",
@@ -43,6 +43,7 @@
   "license": "MIT",
   "dependencies": {
     "clsx": "^2.1.1",
-    "prop-types": "^15.8.1"
+    "prop-types": "^15.8.1",
+    "react-select": "^5.10.1"
   }
 }

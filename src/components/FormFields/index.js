@@ -6,3 +6,5 @@ export { default as FileUploadField } from "./FileUploadField";
 export { default as DateField } from "./DateField";
 export { default as TextareaField } from "./TextareaField";
 export { default as CheckboxGroupField } from "./CheckboxGroupField";
+export { default as TypeAheadSelectField } from "./TypeAheadSelectField";
+export { default as AsyncTypeAheadSelectField } from "./AsyncTypeAheadSelectField";
